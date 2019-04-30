@@ -5,19 +5,19 @@ This code implements PCA web service build on top of scikit-learn decompositions
 
 ## INSTRUCTIONS TO TEST LOCALLY
 cd "your working directory"<br>
-create a virtual environment via: virtualenv "your_virtual_env_name"<br>
-activate virtual env: (linux) source "your_virtual_env_name"/bin/activate (windows) .\"your_virtual_env_name"\Script\activate.bat<br> 
+create a virtual environment via: `virtualenv "your_virtual_env_name"`<br>
+activate virtual env: (linux) `source "your_virtual_env_name"/bin/activate` (windows) `.\"your_virtual_env_name"\Script\activate.bat`<br> 
 clone repository<br>
-run: pip install -r requirements.txt<br>
+run: `pip install -r requirements.txt`<br>
 <br>
 once all dependecies installed...<br>
 __testing:__<br>
 this command will run all unit tests<br>
-python manage.py test<br>
+`python manage.py test`<br>
 __launch in localhost:__<br>
 this comand will launch the flask resfull API<br>
 set enviromental variables (see next section)<br>
-python manage.py run<br>
+`python manage.py run`<br>
 
 ## ENVIRONMENT VARIABLES
 
