@@ -12,7 +12,6 @@ build:
     - activage
    image: docker:dind
    script:
-    - cd env/
     - docker build -t "pca_webservice" .
     
 deploy_dev:
