@@ -1,0 +1,40 @@
+cache:
+  paths:
+  - pca_webservice/
+
+stages:
+  - build
+  - deploy
+
+build:
+   stage: build
+   tags:
+    - activage
+   image: docker:dind
+   script:
+    - cd env/
+    - docker build -t "pca_webservice" .
+    
+deploy_dev:
+   stage: deploy
+   tags:
+    - activage
+   image: docker:dind
+   script:
+    - docker rm -f "pca_webservice_development"
+    #- docker run -d --name=pca_webservice_development -p 5008:5008 --expose=5008 --env="API_PORT=5008" --env="LOG_LEVEL=debug" --env="WORKING_ENV=dev" --env="VIRTUAL_HOST=dev.algo.activage.lst.tfo.upm.es" --env="VIRTUAL_PORT=5008" --env="API_HOST=0.0.0.0" --restart=unless-stopped pca_webservice
+   only:
+    - desarrollo
+
+deploy_prod:
+   stage: deploy
+   tags:
+    - activage
+   image: docker:dind
+   script:
+    - docker rm -f "pca_webservice_production"
+    #- docker run -d --name=pca_webservice_production -p 5009:5009 --expose=5009 --env="API_PORT=5009" --env="LOG_LEVEL=warning" --env="WORKING_ENV=prod" --env="VIRTUAL_HOST=algo.activage.lst.tfo.upm.es" --env="VIRTUAL_PORT=5009" --env="API_HOST=0.0.0.0" --restart=unless-stopped pca_webservice
+   environment:
+    name: produccion
+   only:
+    - produccion
