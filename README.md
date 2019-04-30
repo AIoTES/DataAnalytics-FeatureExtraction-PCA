@@ -21,7 +21,7 @@ python manage.py run
 
 ## ENVIRONMENT VARIABLES
 
-__app:__
+__app:__<br>
 *API_PROTOCOL*: values: http,https(default)<br>desc:workaround to display swagger documentation in http or https
 *WORKING_ENV*:  values:test,dev,prod<br>desc:sets the working environment to test, development or production
 *API_HOST*: values: any,0.0.0.0(default)<br>desc: the domain where the API is hosted, by default the host machine
