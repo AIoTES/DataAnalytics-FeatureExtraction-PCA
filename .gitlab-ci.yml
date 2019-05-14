@@ -27,9 +27,9 @@ mirror-git:
     - cd project
     - git remote add activage ${ACTIVAGE_PROJECT_URL}
     - git push --mirror activage
-    - cd -
-    - git clone --mirror ${CI_REPOSITORY_URL/\.git/\.wiki\.git} wiki
-    - cd wiki
-    - git remote add activage ${ACTIVAGE_PROJECT_URL}.wiki.git
-    - git push --mirror activage
+ #   - cd -
+ #   - git clone --mirror ${CI_REPOSITORY_URL/\.git/\.wiki\.git} wiki
+ #   - cd wiki
+ #   - git remote add activage ${ACTIVAGE_PROJECT_URL}.wiki.git
+ #   - git push --mirror activage
 
