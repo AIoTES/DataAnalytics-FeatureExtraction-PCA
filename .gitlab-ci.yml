@@ -11,11 +11,9 @@ build and push:
   image: docker:dind
   script:
     - docker login -u $DOCKER_USER -p $DOCKER_PASSOWORD $DOCKER_SERVER 
-    - docker build -t Data_analyser-PCA -t $DOCKER_SERVER/Data_analyser-PCA:$CI_COMMIT_REF_SLUG -t $DOCKER_SERVER/Data_analyser-PCA:latest .
-    - docker push $DOCKER_SERVER/Data_analyser-PCA:$CI_COMMIT_REF_SLUG
-    - docker push $DOCKER_SERVER/Data_analyser-PCA:latest
-  only:
-    - master
+    - docker build -t $IMAGE_NAME -t $DOCKER_SERVER/$IMAGE_NAME:$CI_COMMIT_REF_SLUG -t $DOCKER_SERVER/$IMAGE_NAME:latest .
+    - docker push $DOCKER_SERVER/$IMAGE_NAME:$CI_COMMIT_REF_SLUG
+    - docker push $DOCKER_SERVER/$IMAGE_NAME:latest
     
 mirror-git:
   stage: deploy
