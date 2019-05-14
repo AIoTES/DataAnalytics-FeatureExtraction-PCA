@@ -19,6 +19,13 @@ this comand will launch the flask resfull API<br>
 set enviromental variables (see next section)<br>
 `python manage.py run`<br>
 
+### DEPLOY ON DOCKER
+1. clone this repository
+2. open a shell
+3. cd to the directory where the repository has been downloaded
+4. build the image:  `docker build -t <<image_name>> .`
+5. run the image with the desired environmental variables (see next section): Ex.`docker run --env=”API_PORT=8000” -p 8000:8000 -e <<image_name>>:latest`
+
 ## ENVIRONMENT VARIABLES
 
 __app:__<br>
@@ -28,7 +35,7 @@ __app:__<br>
 *API_PORT*: values: any available port, 5000(default)<br>desc: the port to expose the API<br>
 *LOG_LEVEL*: values:debug,info,warning,error,critical<br>desc: threshold logging level to manage which messages will be showed<br>
 __docker:__<br>
-(aquí supongo que se va a usar auto proxy?) Alejandro, por favor ,escribe esta parte y modifica el gitlab ci en consonancia, el docker run está comentado
+
 
 ## USAGE
 The API exposes two methods:<br>
@@ -38,4 +45,4 @@ calculates the pca
 __pca/test__:
 evals the pca 
 <br>
-For further info swagger documentation can be found under "your host site"/docs/ 
+For further info swagger documentation can be found under <<your host site>>"/docs/ 
