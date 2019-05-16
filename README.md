@@ -35,6 +35,11 @@ __app:__<br>
 *API_PORT*: values: any available port, 5000(default)<br>desc: the port to expose the API<br>
 *LOG_LEVEL*: values:debug,info,warning,error,critical<br>desc: threshold logging level to manage which messages will be showed<br>
 __docker:__<br>
+    *$DOCKER_USER*: DockerID or user of your service registry.
+    *$DOCKER_PASSOWORD*: Password to access your registry.
+    *$DOCKER_SERVER*: IP or DNS of you registry.
+    *$IMAGE_NAME*: Name provided to your built image.
+    *$CI_COMMIT_REF_SLUG*: reference label provided to your image (e.g. latest). 
 
 
 ## USAGE
