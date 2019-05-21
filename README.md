@@ -73,9 +73,11 @@ note that query:"test" just loads the infamous [iris dataset](https://en.wikiped
   },
   "options": "pca",
   "n_components":3
-}`
+}
+```
 will return:
-`{
+```
+{
   "status": "ok",
   "components": [
     [
