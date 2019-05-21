@@ -4,20 +4,23 @@ This is a Flask based web REST service to use Singular Value Decomposition to pr
 This code implements PCA web service build on top of scikit-learn decompositions method PCA and IncrementalPCA.<br>
 
 ## INSTRUCTIONS TO TEST LOCALLY
-cd "your working directory"<br>
-create a virtual environment via: `virtualenv "your_virtual_env_name"`<br>
-activate virtual env: (linux) `source "your_virtual_env_name"/bin/activate` (windows) `.\"your_virtual_env_name"\Script\activate.bat`<br> 
-clone repository<br>
-run: `pip install -r requirements.txt`<br>
-<br>
-once all dependecies installed...<br>
-__testing:__<br>
-this command will run all unit tests<br>
-`python manage.py test`<br>
-__launch in localhost:__<br>
-this comand will launch the flask resfull API<br>
-set enviromental variables (see next section)<br>
-`python manage.py run`<br>
+1. cd "your working directory"<br>
+1. create a virtual environment via: `virtualenv "your_virtual_env_name"`<br>
+1. activate virtual env: (linux) `source "your_virtual_env_name"/bin/activate` (windows) `.\"your_virtual_env_name"\Script\activate.bat`<br> 
+1. clone repository<br>
+1. run: `pip install -r requirements.txt`<br>
+
+once all dependecies installed...
+
+__testing:__
+this command will run all unit tests
+
+`python manage.py test`
+
+__launch in localhost:__
+this comand will launch the flask resfull API, remember set enviromental variables (see next section)
+
+`python manage.py run`
 
 ### DEPLOY ON DOCKER
 1. clone this repository
