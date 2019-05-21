@@ -24,22 +24,24 @@ set enviromental variables (see next section)<br>
 2. open a shell
 3. cd to the directory where the repository has been downloaded
 4. build the image:  `docker build -t <<image_name>> .`
-5. run the image with the desired environmental variables (see next section): Ex.`docker run --env=”API_PORT=8000” -p 8000:8000 -e <<image_name>>:latest`
+5. run the image with the desired environmental variables (see next section): Ex.`docker run --env=”API_PORT=8000” --env"API_PROTOCOL=http" -p 8000:8000 <<image_name>>:latest`
 
 ## ENVIRONMENT VARIABLES
-
-__app:__<br>
-*API_PROTOCOL*: values: http,https(default)<br>desc:workaround to display swagger documentation in http or https<br>
-*WORKING_ENV*:  values:test,dev,prod<br>desc:sets the working environment to test, development or production<br>
-*API_HOST*: values: any,0.0.0.0(default)<br>desc: the domain where the API is hosted, by default the host machine<br>
-*API_PORT*: values: any available port, 5000(default)<br>desc: the port to expose the API<br>
-*LOG_LEVEL*: values:debug,info,warning,error,critical<br>desc: threshold logging level to manage which messages will be showed<br>
-__docker:__<br>
-    *$DOCKER_USER*: DockerID or user of your service registry.<br>
-    *$DOCKER_PASSOWORD*: Password to access your registry.<br>
-    *$DOCKER_SERVER*: IP or DNS of you registry.<br>
-    *$IMAGE_NAME*: Name provided to your built image.<br>
-    *$CI_COMMIT_REF_SLUG*: reference label provided to your image (e.g. latest). 
+ - *API_PROTOCOL*: 
+    - values: http,https(default)
+    - desc:workaround to display swagger documentation in http or https<br>
+ - *WORKING_ENV*:  
+    - values:test,dev,prod
+    - desc:sets the working environment to test, development or production<br>
+ - *API_HOST*: 
+    - values: any,0.0.0.0(default)
+    - desc: the domain where the API is hosted, by default the host machine<br>
+ - *API_PORT*: 
+    - values: any available port, 5000(default)
+    - desc: the port to expose the API
+ - *LOG_LEVEL*: 
+    - values:debug,info,warning,error,critical
+    - desc: threshold logging level to manage which messages will be showed<br>
 
 
 ## USAGE
@@ -47,7 +49,7 @@ The API exposes two methods:<br>
 __pca/train__: 
 calculates the pca
 <br>
-__pca/test__:
+__pca/eval__:
 evals the pca 
 <br>
 For further info swagger documentation can be found under << your hosted site >>/docs/ 
