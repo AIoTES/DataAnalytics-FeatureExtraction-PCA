@@ -21,7 +21,7 @@ class PCADto:
     pca_coef_list=fields.List(pca_coef,description='coeficients array')
     
     pca_transform=api.model('pca_transform',{
-        'transformed_data': fields.List(pca_coef_list,required=True, description='transform data')
+        'transformed_data': fields.List(pca_coef_list,required=True, description='transformed data after applying PCA')
         })
     pca_input_stream=api.model('pca_input_stream',{
         'query':fields.String(required=False,description='query for data extraction from data lake'),
@@ -29,7 +29,7 @@ class PCADto:
         })
     pca_input=api.model('pca_input',{
         'dataDesc': fields.Nested(pca_input_stream,required=True, description='#/definitions/dataDesc'),
-        'options':fields.String(required=True,description='type of pca calculation to apply'),
+        'options':fields.String(required=True,description='type of pca calculation to apply(options:pca,pca_raw,ipca,ipca_raw)'),
         'n_components':fields.Integer(required=True,description='number of components'),
         'batch_size':fields.Integer(required=False,description='batch size for incremental version'),
         })

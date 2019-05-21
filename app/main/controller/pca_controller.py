@@ -12,8 +12,8 @@ _pca_input_transform=PCADto.pca_input_transform
 
 @api.route('/train')
 class PCATrain(Resource):
-    @api.response(200, 'PCA dimensionality reduction has been calculated.')
-    @api.doc('get all user related sudoku logs',security='apikey')
+    @api.response(200, 'status: ok if PCA dimensionality reduction has been calculated properly, details of the retailed model can be found in https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html, model_stream: provides a model serialization for a later use.')
+    @api.doc('returns the raw model serialised from aplying PCA to the inpput data')
     @api.expect(_pca_input, validate=True) # this line validates the input, can be commented to allow raw inputs
     def post(self):
         """read json input and calculates transformation"""
@@ -22,7 +22,7 @@ class PCATrain(Resource):
 
 @api.route('/eval')
 class PCAEval(Resource):
-    @api.response(200, 'Dataset dimensionality reduction has been applied.')
+    @api.response(200, 'status: ok if dataset dimensionality reduction has been applied successfuly, additionaly, transformed_data: returns the array of transformed dataset reduced by the selected number of components.')
     @api.doc('evaluates the provided dimensionality reduction on the provided dataset')
     @api.expect(_pca_input_transform, validate=True) # this line validates the input, can be commented to allow raw inputs
     def post(self):

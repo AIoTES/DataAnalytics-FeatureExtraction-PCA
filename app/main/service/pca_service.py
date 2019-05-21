@@ -1,5 +1,6 @@
 import pickle
 import codecs
+import logging
 import pandas as pd
 
 from app.main.service.pca import train_PCA,train_IPCA,eval_PCA
@@ -52,6 +53,7 @@ def post_calculate_pca(data):
                     print(response_object)
                     return response_object, 200
                 elif(data['options'] in ['ipca','ipca_raw']):
+                    logging.info(X.shape[0])
                     if(data['batch_size']>0 and data['batch_size']<=X.shape[0]): # check a logic value for batch size (stochastic and batch mode are possible)
                         transf=train_IPCA(X,data['n_components'],data['batch_size'],data['options'])
                         bytes_model=pickle.dumps(transf)
