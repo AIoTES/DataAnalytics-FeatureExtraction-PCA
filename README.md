@@ -747,3 +747,10 @@ will return:
   ]
 }
 ```
+### Credits
+Alejandro Medrano - amedrano@lst.tfo.upm.es
+Javier Rojo - jlacal@lst.tfo.upm.es
+This work stands on the shoulders of some great libraries, check requirements.txt for more information.
+
+### License
+Apache-2.0
